@@ -77,3 +77,73 @@ func From(r rune) (category Category) {
 	}
 	return
 }
+
+// IsLetter checks if the category is Letter (L).
+func (c Category) IsLetter() bool {
+	switch c {
+	case UnicodeLl, UnicodeLm, UnicodeLo, UnicodeLt, UnicodeLu:
+		return true
+	default:
+		return false
+	}
+}
+
+// IsMark checks if the category is Mark (M).
+func (c Category) IsMark() bool {
+	switch c {
+	case UnicodeMc, UnicodeMe, UnicodeMn:
+		return true
+	default:
+		return false
+	}
+}
+
+// IsNumber checks if the category is Number (N).
+func (c Category) IsNumber() bool {
+	switch c {
+	case UnicodeNd, UnicodeNl, UnicodeNo:
+		return true
+	default:
+		return false
+	}
+}
+
+// IsPunctuation checks if the category is Punctuation (P).
+func (c Category) IsPunctuation() bool {
+	switch c {
+	case UnicodePc, UnicodePd, UnicodePe, UnicodePf, UnicodePi, UnicodePo, UnicodePs:
+		return true
+	default:
+		return false
+	}
+}
+
+// IsSymbol checks if the category is Symbol (S).
+func (c Category) IsSymbol() bool {
+	switch c {
+	case UnicodeSc, UnicodeSk, UnicodeSm, UnicodeSo:
+		return true
+	default:
+		return false
+	}
+}
+
+// IsSeparator checks if the category is Separator (Z).
+func (c Category) IsSeparator() bool {
+	switch c {
+	case UnicodeZl, UnicodeZp, UnicodeZs:
+		return true
+	default:
+		return false
+	}
+}
+
+// IsOther checks if the category is Other (C).
+func (c Category) IsOther() bool {
+	switch c {
+	case UnicodeCc, UnicodeCf, UnicodeCn, UnicodeCo, UnicodeCs:
+		return true
+	default:
+		return false
+	}
+}
