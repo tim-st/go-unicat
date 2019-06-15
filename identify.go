@@ -4,9 +4,14 @@ import "unicode"
 
 // From returns the General Unicode Category of the given rune.
 func From(r rune) (category Category) {
-	// TODO: implement common cases manually
 	// TODO: order switch by frequency
 	switch {
+	case r >= 'a' && r <= 'z':
+		category = UnicodeLl
+	case r == ' ':
+		category = UnicodeZs
+	case r >= 'A' && r <= 'Z':
+		category = UnicodeLu
 	// L
 	case unicode.Is(unicode.Ll, r):
 		category = UnicodeLl
